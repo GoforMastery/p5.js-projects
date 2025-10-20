@@ -16,13 +16,26 @@ class Walker {
   }
 }
 let walker;
+let total = 20;
+let randomCounts = [];
 function setup() {
   createCanvas(640, 240);
-  walker = new Walker();
+  for (let i = 0; i < 20; ++i) {
+    randomCounts[i] = 0;
+  }
   background("aqua");
 }
 
 function draw() {
-  walker.step();
-  walker.show();
+  background(255);
+  let index = floor(random(randomCounts.length));
+  /**random numbers from 0 to 19 size of 20... */
+  randomCounts[index]++;
+  stroke(0);
+  fill(127);
+  let w = width / randomCounts.length;
+  for (let x = 0; x < randomCounts.length; ++x) {
+    rect(x * w, height - randomCounts[x], w - 1, randomCounts[x]);
+    /**rectange drawn using upper left and width and height..... */
+  }
 }
