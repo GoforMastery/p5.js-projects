@@ -19,7 +19,7 @@ let walker;
 let total = 20;
 let randomCounts = [];
 function setup() {
-  createCanvas(640, 240);
+  createCanvas(1200, 240);
   for (let i = 0; i < 20; ++i) {
     randomCounts[i] = 0;
   }
